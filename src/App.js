@@ -1,6 +1,6 @@
 import "./App.css";
-import MensajeFinDelJuego from "./componentes/MensajeFinDelJuego/MensajeFinDelJuego";
-import LetraFallida from "./componentes/LetraFallida/LetraFallida";
+// import MensajeFinDelJuego from "./componentes/MensajeFinDelJuego/MensajeFinDelJuego";
+// import LetraFallida from "./componentes/LetraFallida/LetraFallida";
 import { useState } from "react";
 import Boton from "./componentes/Boton/Boton";
 import Imput from "./componentes/Imput/Imput";
@@ -10,7 +10,8 @@ function App() {
   const [letraInput, setletraInput] = useState("");
   function cogerValor() {
     setletraInput(document.querySelector(".input-letra").value);
-    console.log(letraInput);
+    return letraInput;
+    // console.log(letraInput);
   }
 
   return (
