@@ -1,4 +1,5 @@
 import "./App.css";
+import Ahorcado from "./componente/Ahorcado/Ahorcado";
 import MensajeFinDelJuego from "./componentes/MensajeFinDelJuego/MensajeFinDelJuego";
 import LetraFallida from "./componentes/LetraFallida/LetraFallida";
 import { useState } from "react";
@@ -14,6 +15,7 @@ function App() {
           console.log("hola");
         }}
       />
+<Ahorcado numeroFallos={3} />
 
       {/* <LetraFallida letra={letrasFalladas} /> */}
 
