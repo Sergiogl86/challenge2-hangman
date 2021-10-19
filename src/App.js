@@ -1,6 +1,9 @@
 import "./App.css";
 // import MensajeFinDelJuego from "./componentes/MensajeFinDelJuego/MensajeFinDelJuego";
 // import LetraFallida from "./componentes/LetraFallida/LetraFallida";
+import Ahorcado from "./componente/Ahorcado/Ahorcado";
+import MensajeFinDelJuego from "./componentes/MensajeFinDelJuego/MensajeFinDelJuego";
+import LetraFallida from "./componentes/LetraFallida/LetraFallida";
 import { useState } from "react";
 import Boton from "./componentes/Boton/Boton";
 import Imput from "./componentes/Imput/Imput";
@@ -28,14 +31,7 @@ function App() {
         </article>
         <article>{/* Componente letras Falladas */}</article>
       </section>
-
-      {/* <Boton
-        textoBoton={"Enviar"}
-        eventoClick={() => {
-          console.log("hola");
-        }}
-      /> */}
-
+    <Ahorcado numeroFallos={3} />
       {/* <LetraFallida letra={letrasFalladas} /> */}
 
       {/* <MensajeFinDelJuego mensaje={"hola"} /> */}
