@@ -1,0 +1,23 @@
+#root {
+  display: flex;
+  flex-direction: column;
+}
+.header-principal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.contenedor-ahorcado {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.contenedor-ahorcado__palabra-incognita {
+  display: flex;
+}
+.contenedor-ahorcado__palabra {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 200px;
+}

@@ -1,4 +1,4 @@
-import "./ahorcado.css";
+import "./Ahorcado.css";
 import { useMemo } from "react";
 
 function Ahorcado({ numeroFallos }) {
