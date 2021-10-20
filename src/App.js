@@ -1,71 +1,68 @@
-import "./App.css";
 import { useState } from "react";
-import MensajeFinDelJuego from "./componentes/MensajeFinDelJuego/MensajeFinDelJuego";
-import LetraFallida from "./componentes/LetraFallida/LetraFallida";
-import Ahorcado from "./componentes/Ahorcado/Ahorcado";
-import LetraPalabra from "./componentes/LetrasPalabras/LetrasPalabras";
 import Boton from "./componentes/Boton/Boton";
 import Imput from "./componentes/Imput/Imput";
+import LetrasPalabras from "./componentes/LetrasPalabras/LetrasPalabras";
+import Ahorcado from "./componentes/Ahorcado/Ahorcado";
 
 function App() {
-  const [letrasFalladas, setletrasFalladas] = useState(["a", "b", "c"]);
-  const [letraInput, setletraInput] = useState("");
-  const [mensajeFin, setmensajeFin] = useState("Has perdido");
+  const palabra = "perro";
 
-  // const prueba = ["h", "o", "l", "a"];
+  const [palabraObject, setpalabraObject] = useState(
+    palabra.split("").map((letra, index) => {
+      return {
+        id: index,
+        letra: letra,
+        state: false,
+      };
+    })
+  );
 
-  const palabra = "Hola".split("");
-  // console.log(palabra);
-  // const [palabraArray, setpalabraArray] = useState(palabra.split(""));
+  const [letrasErrones, setletrasErrones] = useState([]);
 
-  //   setpalabraArray(
-  //     palabraArray.map((letra, indice) => {
-  //       return {
-  //         id: indice,
-  //         letra: letra,
-  //         estado: false,
-  //       };
-  //     })
-  //   );
-  //   console.log(palabraArray);
+  const [numeroFallos, setNumeroFallos] = useState(0);
 
-  function cogerValor() {
-    setletraInput(document.querySelector(".input-letra").value);
-    return letraInput;
-    // console.log(letraInput);
-  }
+  const introducirLetra = () => {
+    const letraIntroducida = document.querySelector(".input-letra").value;
+    let encontrado = false;
+    const actualizarPalabra = palabraObject.map((letra, index) => {
+      if (letra.letra === letraIntroducida) {
+        encontrado = true;
+        return {
+          id: index,
+          letra: letra.letra,
+          state: true,
+        };
+      } else {
+        return letra;
+      }
+    });
+
+    if (encontrado === false) {
+      letrasErrones.push({
+        id: `Errones${letrasErrones.length}`,
+        letra: letraIntroducida,
+        state: true,
+      });
+      setletrasErrones(letrasErrones);
+      setNumeroFallos(numeroFallos + 1);
+    }
+
+    setpalabraObject(actualizarPalabra);
+  };
 
   return (
-    <>
-      <header className="header-principal">
-        <h1 className="header-principal__titular">
-          Ahorcado - Sergio | Sandra
-        </h1>
-      </header>
-      <section className="contenedor-ahorcado">
-        <article className="contenedor-ahorcado__dibujo">
-          <Ahorcado numeroFallos={10} />
-        </article>
-        <article className="contenedor-ahorcado__palabra">
-          <div className="contenedor-ahorcado__palabra-incognita">
-            {palabra.map((letra, index) => (
-              <LetraPalabra letraPalabra={letra} key={index} />
-            ))}
-          </div>
-          <div>
-            <Imput />
-            <Boton
-              clase={"boton-enviar"}
-              textoBoton={"Enviar"}
-              eventoClick={cogerValor}
-            />
-          </div>
-          <LetraFallida letra={letrasFalladas} />
-        </article>
-      </section>
-
-      <MensajeFinDelJuego mensaje={mensajeFin} />
-    </>
+    <div className="App">
+      <LetrasPalabras palabra={palabraObject} className="letrasPalabras" />
+      <div>
+        <Imput />
+        <Boton textoBoton="Ingresar letra" eventoClick={introducirLetra} />
+      </div>
+      <div></div>
+      <div>{<Ahorcado numeroFallos={numeroFallos} />}</div>
+      <div>
+        <LetrasPalabras palabra={letrasErrones} className="letrasPalabras" />
+      </div>
+    </div>
   );
 }
 

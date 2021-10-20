@@ -1,16 +1,15 @@
-import PropTypes from "prop-types";
-import "./LetraPalabra.css";
+import MostrarLetra from "../MostrarLetra/MostrarLetra";
 
-const LetraPalabra = ({ letraPalabra }) => {
+function LetrasPalabras({ palabra }) {
+  console.log("LetrasPalabras");
+  console.log(palabra);
   return (
-    <div className="contenedor-ahorcado__contenedor-letra">
-      <p lassName="contenedor-ahorcado__letra">{letraPalabra}</p>
+    <div className="letrasPalabras">
+      {palabra.map((letra) => (
+        <MostrarLetra letra={letra} key={letra.id} />
+      ))}
     </div>
   );
-};
+}
 
-// LetraPalabra.propTypes = {
-//   letraPalabra: PropTypes.objectOf.isRequired,
-// };
-
-export default LetraPalabra;
+export default LetrasPalabras;
