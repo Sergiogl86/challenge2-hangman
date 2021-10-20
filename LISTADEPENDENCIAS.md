@@ -37,10 +37,10 @@ Si lo esta, la tiene que añadir en el array de letras acertadas.
 
 -Componente: Input Letra
 -Permite al usuario introducir una letra.
-\*Condicional que sea texto.
-\*Condicional que solo sea una letra.
+\*Condicional que sea texto. -X-
+\*Condicional que solo sea una letra. -X-
 \*Condicional que no se repitan letras.
--Almacenar una letra.
+-Almacenar una letra. -NO-
 
 -Componente: Boton
 -Muestra un texto que le llega por parametro.
