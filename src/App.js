@@ -38,17 +38,21 @@ function App() {
   return (
     <>
       <header className="header-principal">
-        <h1 className="header-principal__titular">Ahorcado</h1>
+        <h1 className="header-principal__titular">
+          Ahorcado - Sergio | Sandra
+        </h1>
       </header>
       <section className="contenedor-ahorcado">
         <article className="contenedor-ahorcado__dibujo">
-          <Ahorcado numeroFallos={"FALTA"} />
+          <Ahorcado numeroFallos={10} />
         </article>
         <article className="contenedor-ahorcado__palabra">
-          <div>
+          <div className="contenedor-ahorcado__palabra-incognita">
             {palabra.map((letra, index) => (
               <LetraPalabra letraPalabra={letra} key={index} />
             ))}
+          </div>
+          <div>
             <Imput />
             <Boton
               clase={"boton-enviar"}
@@ -56,12 +60,9 @@ function App() {
               eventoClick={cogerValor}
             />
           </div>
-        </article>
-        <article className="contenedor-ahorcado__letrasFalladas">
           <LetraFallida letra={letrasFalladas} />
         </article>
       </section>
-      <Ahorcado numeroFallos={3} />
 
       <MensajeFinDelJuego mensaje={mensajeFin} />
     </>

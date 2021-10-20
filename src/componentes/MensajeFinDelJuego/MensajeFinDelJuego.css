@@ -1,0 +1,8 @@
+.fin-juego {
+  border: 2px dashed black;
+  width: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
