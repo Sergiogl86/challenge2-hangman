@@ -50,7 +50,11 @@ function App() {
               <LetraPalabra letraPalabra={letra} key={index} />
             ))}
             <Imput />
-            <Boton textoBoton={"Enviar"} eventoClick={cogerValor} />
+            <Boton
+              clase={"boton-enviar"}
+              textoBoton={"Enviar"}
+              eventoClick={cogerValor}
+            />
           </div>
         </article>
         <article className="contenedor-ahorcado__letrasFalladas">

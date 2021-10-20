@@ -1,7 +1,12 @@
 import PropTypes from "prop-types";
+import "./Boton.css";
 
-const Boton = ({ textoBoton, eventoClick }) => {
-  return <button onClick={eventoClick}>{textoBoton}</button>;
+const Boton = ({ textoBoton, eventoClick, clase }) => {
+  return (
+    <button className={clase} onClick={eventoClick}>
+      {textoBoton}
+    </button>
+  );
 };
 
 Boton.propTypes = {
