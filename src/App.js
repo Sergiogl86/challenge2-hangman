@@ -14,7 +14,7 @@ function App() {
 
   // const prueba = ["h", "o", "l", "a"];
 
-  // const palabra = "Hola".split("");
+  const palabra = "Hola".split("");
   // console.log(palabra);
   // const [palabraArray, setpalabraArray] = useState(palabra.split(""));
 
@@ -46,10 +46,9 @@ function App() {
         </article>
         <article className="contenedor-ahorcado__palabra">
           <div>
-            {/* {palabraArray.map((letra, index) => (
+            {palabra.map((letra, index) => (
               <LetraPalabra letraPalabra={letra} key={index} />
-            ))} */}
-            {/* falta */}
+            ))}
             <Imput />
             <Boton textoBoton={"Enviar"} eventoClick={cogerValor} />
           </div>
