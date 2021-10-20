@@ -1,19 +1,10 @@
 import { useState } from "react";
-import "./App.css";
-import LetrasPalabras from "./componentes/LetrasPalabras/LetrasPalabras";
 import Boton from "./componentes/Boton/Boton";
 import Imput from "./componentes/Imput/Imput";
+import LetrasPalabras from "./componentes/LetrasPalabras/LetrasPalabras";
 import Ahorcado from "./componentes/Ahorcado/Ahorcado";
-import MostrarLetra from "./componentes/MostrarLetra/MostrarLetra";
 
 function App() {
-  // const [letrasFalladas, setletrasFalladas] = useState(["a", "b", "c"]);
-  // const [letraInput, setletraInput] = useState("");
-  // function cogerValor() {
-  //   setletraInput(document.querySelector(".input-letra").value);
-  //   return letraInput;
-  //   // console.log(letraInput);
-  // }
   const palabra = "perro";
 
   const [palabraObject, setpalabraObject] = useState(
